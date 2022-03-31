@@ -1,110 +1,98 @@
 <template>
 
-    <div>
+    <div class="home-content center">
+        <h1 class="title center">Fill up the form</h1>
     <!-- <Navigation/> -->
-        <div class="boody">
-            <img src="images/architecture1.png" alt="">
-        <div class="body2">
-            <div>
-                <p id="logo">Architecture</p>
-            </div>   
-        <form method="post" class="form">
-        <div class="inpt">
-        <label>Nom</label>
-        <input type="text" name="nom" placeholder="Entrez votre nom" required>
+        <div class="form-container">   
+            <form class="mb-3" method="post" >
+            <div class="inpt">
+            <label>Nom</label>
+            <input type="text" name="nom" class="form-control" placeholder="Entrez votre nom" required>
+            </div>
+            <div class="inpt">
+            <label>Prenom</label>
+            <input type="text" name="prenom" class="form-control" placeholder="Entrez votre prenom" required>
+            </div>
+            <div class="inpt">
+            <label>Profession</label>
+            <input type="text" name="Profession" class="form-control" placeholder="Entrez votre profession" required>
+            </div>
+            <div class="inpt">
+            <label>Date de naissance</label>
+            <input type="date" name="date_de_naissance" class="form-control"  placeholder="Date de naissance" required>
+            </div>
+            <div class="center">
+            <input type="submit" name="submit" class="btn btn-primary my-btn center">
+            </div>
+            <p>Etes-vous deja un ... ? <span>Clicker ici</span></p>
+            </form>
         </div>
-        <div class="inpt">
-        <label>Prenom</label>
-        <input type="text" name="prenom" placeholder="Entrez votre prenom" required>
-        </div>
-        <div class="inpt">
-        <label>Profession</label>
-        <input type="text" name="Profession" placeholder="Entrez votre profession" required>
-        </div>
-        <div class="inpt">
-        <label>Date de naissance</label>
-        <input type="date" name="date_de_naissance" placeholder="Date de naissance" required>
-        </div>
-        <div class="submit">
-        <input type="submit" name="submit" id="submit">
-        </div>
-        <p>Etes-vous deja un ... ? <span>Clicker ici</span></p>
-    </form>
-    </div>
-    </div>
-    </div>
-    
+    </div> 
 </template>
 
 <script>
 // import Navigation from "../components/Navigation.vue";
-// export default {
-//     components: {
+/*  export default {
+    components: {
 //     Navigation
-// }
-// }
+
+ }
+} */
 </script>
 
-<style>
+<style lang="scss">
 @import "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css";
+@mixin center($justify,$align,$direction){
+            display: flex;
+            flex-direction: $direction;
+            justify-content: $justify;
+            align-items: $align;
+        }
+.center{
+        @include center(space-evenly,center,column);
+    }
+.title{
+    margin-top: 2rem;
+    letter-spacing: 1rem;
+    text-decoration: wavy;
+    font-weight: 600 bolder;
+    font-style: italic;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.107);
 
-* {
-  padding:0;
-  margin: 0;
-  box-sizing: border-box;
 }
-
-.boody{
-    display: flex;
-}
-
-.body2{
-    display: flex;
-    flex-direction: column;
-}
-
-.inpt{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-img{
-    background-size: cover; 
-    background-repeat: no-repeat;
-    height: 100vh;
-    flex-basis: 50%;
-}
-
-.form{
-    background-color: #157491;
-    margin: auto;
-    padding: 20px;
-    width: 30%;
-    height: 58vh;
+.form-container{
+    background-color: whitesmoke;
+    margin-top: 2rem;
+    padding: 10px;
+    width:35%;
+    height: auto;
     color: whitesmoke;
 }
-
-.form input{
-    background-color: #157491;
-    border: none;
-    border-bottom: 1px solid #F9AA04;
+.my-btn{
+    width: 35% !important;
+    margin: 10px;
 }
-
-#submit{
-    border: 1px solid #F9AA04;
-    color: #EB6805;
-    width: 150px;
-    margin-bottom: 10px;
+.home-content{
+    background-image: url("../assets/architecture-3357028__340.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
 }
-
-p span{
-    color: #EB6805;
+@media (max-width: 480px){
+    .form-container{
+    background-color: whitesmoke;
+    margin: auto;
+    padding: 10px;
+    width:95%;
+    color: whitesmoke;
 }
-
-#logo{
-    margin-bottom: 0px;
-    display: block;
+    .title{
+    font-size: medium;
+    width: 100%;
+    letter-spacing: 0.5rem;
+    }
 }
-
 </style>
