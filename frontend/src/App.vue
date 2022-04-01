@@ -3,12 +3,22 @@
 import Footer from "./components/Footer.vue"
 import Navigation from "./components/Navigation.vue"
 import Header from "./components/Header.vue"
+import HeaderDashboard from "./components/HeaderDashboard.vue"
 export default {
     component: "app",
     components: {
     Footer,
     Navigation,
-    Header
+    Header,
+    HeaderDashboard,
+},
+methods: {
+    
+},
+computed:{
+    isDashboardPage(){
+        return this.$router.currentRoute.value.fullPath.includes("/dashboard");
+    }
 }
 }
 </script>
@@ -20,9 +30,11 @@ export default {
         <router-link to="/login">login</router-link>
         <router-link to="/">login</router-link>
     </div> -->
-    <Header/>
+    <HeaderDashboard v-if="isDashboardPage"/>
+    <Header v-else/>
+
     <router-view></router-view>
-    <Footer/>
+    <Footer />
 </div>
 </template>
 

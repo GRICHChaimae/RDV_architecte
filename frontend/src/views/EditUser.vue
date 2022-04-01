@@ -53,4 +53,7 @@ export default {
     form{
         color: black;
     }
+    .form-container{
+        margin-bottom:50px ;
+    }
 </style>

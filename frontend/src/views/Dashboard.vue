@@ -17,7 +17,7 @@
                 <td scope="row">test</td>
                 <td scope="row">test</td>
                 <td scope="row">
-                    <div class="d-flex">
+                    <div class="d-flex" id="actions">
                     <span class="edit" >
                         <form action="">
                             <input type="hidden" name="edit" >
@@ -52,13 +52,23 @@ export default {
 }
 </script>
 <style lang="scss">
-    span{
-        gap:10px;
-    }
 
     @media (max-width:480px) {
         .container{
             overflow-x: scroll;
+        }
+        th{
+            font-size: 10px;
+            text-align: center;
+        }
+        td{
+            font-size: 10px;
+            text-align: center;
+            align-content: center;
+        }
+        img{
+            height: 15px;
+            width: 15px;
         }
     }
 </style>

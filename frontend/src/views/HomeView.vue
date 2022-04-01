@@ -59,6 +59,7 @@
     font-style: italic;
     text-transform: uppercase;
     background: rgba(255, 255, 255, 0.107);
+    text-align: center;
 
 }
 .form-container{
@@ -79,7 +80,7 @@
     background-size:cover;
     object-fit: cover;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 }
 @media (max-width: 480px){
     .form-container{
