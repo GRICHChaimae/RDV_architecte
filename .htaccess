@@ -2,5 +2,5 @@ Options All -Indexes
 
 RewriteEngine On
 
-RewriteBase /RDV_architecte/
+RewriteBase /RDV_architecte
 RewriteRule ^([a-zA-Z0-9-_/]*)$ index.php?page=$1

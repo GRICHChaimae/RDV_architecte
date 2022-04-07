@@ -1,16 +1,16 @@
 <?php
-
+header("Access-Control-Allow-Origin:*");
+header("Access-Control-Allow-Headers:*");
+header('Access-Control-Allow-Methods:*');
 require_once "autoload.php";
-const BASE_URL = "http://RDV_architecte/app";
+require_once "./app/Module/DatabaseModel.php";
 $params = explode("/", $_GET['page']);
-
+$params = array_slice($params, 1);
 if(!empty($params[0])) {
 
     $route = $_GET["page"];
-    $viewPath = "app/view/$route.php";
-
     $controller=ucfirst($params[0])."Controller";
-    $controllerPath = "app/Controller/$controller.php";
+    $controllerPath = "./app/Controller/$controller.php";
     if(file_exists($controllerPath)){
         $obj = new $controller();
         if(!empty($params[1])) {
@@ -28,13 +28,11 @@ if(!empty($params[0])) {
         }else{
             echo "error 404";
         }
-    } else if (file_exists($viewPath)){
-        include $viewPath;
-    }else{
+    } else{
         echo "error 404";
     }
 }
 else {
-    include "app/view/home.php";
+    include "./app/view/home.php";
 }
 ?>

@@ -2,11 +2,11 @@
     <div class="body center">
         <h2 class="title">Login With Your User ID</h2>
         <div class="form-container">
-         <form action="" method="post">
+         <form action="" method="post" @submit.prevent="submit">
                 <h4 class="txt-center">User Login</h4>
                 <div class="mb-3">
-                    <label for="text" class="form-label">User ID</label>
-                    <input type="text" autocomplete="on" name="ID" class="form-control" placeholder="ID" required>
+                    <label for="ID" class="form-label">User ID</label>
+                    <input v-model="ref" type="text" autocomplete="on" name="ID" class="form-control" placeholder="ID" required>
                 </div>
                 <div class="center">
                     <input type="submit" name="submit" class="btn btn-primary my-btn center" value="login">
@@ -18,7 +18,47 @@
 </template>
 
 
-<script></script>
+
+<script>
+      import axios from "axios";
+      import {ref} from "vue";
+
+      export default {
+
+
+        data(){
+          return{
+            ref: "",
+          }
+        },
+        methods:{
+          submit: function () {
+            const endpoint = "http://localhost/RDV_architecte/app/user/checkByRef"
+            axios.post(endpoint, {reference: this.ref}).then(res => {
+              if (res.data === false){
+                console.log('error')
+              }else {
+                localStorage.setItem("user_id", this.ref);
+                localStorage.setItem("id",res.data.id)
+                console.log(localStorage);
+                this.$router.push('/rdv_update')
+              }
+              // if (!res.data.reference) {
+              //   console.log("wrong connection");
+              //   return;
+              // }else{
+              //   localStorage(res.data)
+              //   console.log(localStorage)
+              //   this.$router.push('/rdv_update')
+              // }
+            });
+
+          }
+        }
+      }
+</script>
+
+
 <style lang="scss" scoped>
     @mixin center($justify,$align,$direction){
             display: flex;

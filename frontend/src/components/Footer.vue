@@ -1,6 +1,6 @@
-<template >
+<template>
         <div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
                 <div class="col-md-4 d-flex align-items-center">
                 <span class="text-muted">©2022 Architecture Terms of ServicePrivacy PolicyWorldwide</span>
                 </div>
@@ -30,7 +30,9 @@ export default {
     .footer{
         @include center(space-evenly,center,row);
     }
-    
+    .container{
+      max-width: 1440px;
+    }
     *{
         color: aliceblue;
         font-family: $font;

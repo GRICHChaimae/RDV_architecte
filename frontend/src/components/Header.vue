@@ -1,4 +1,4 @@
-<template lang="">
+<template>
     <div>
         <div class="container border-bottom">
         <header class="d-flex justify-content-between py-3">
@@ -35,6 +35,9 @@ export default {
 <style lang="scss" scoped>
     li{
         list-style: none;
+    }
+    .container{
+      max-width: 1440px;
     }
     a{
         list-style: none !important;

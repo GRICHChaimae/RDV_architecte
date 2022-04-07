@@ -12,4 +12,29 @@ require_once "DatabaseModel.php";
                 return 'error ' . $ex->getMessage();
             }
         }
+        static public function getAllClient(){
+            $con = DatabaseModel::connect();
+            $db = $con->prepare('SELECT * FROM users ORDER BY id ASC');
+            if ($db->execute()){
+                return $db->fetchAll(PDO::FETCH_ASSOC);
+            }
+        }
+
+        public static function updateUser($newData)
+        {
+            $db = DatabaseModel::connect()->prepare('UPDATE users SET 
+            nom = :nom , prenom = :prenom , date_de_naissance = :ddn , profession = :profession
+            WHERE id = :id');
+            if ($db->execute($newData)){
+                echo 'Successefull update';
+            }
+        }
+
+        public static function deleteClient($id)
+        {
+            $db = DatabaseModel::connect()->prepare('DELETE  FROM users  WHERE users.id = ?');
+            if ($db->execute([$id])){
+               echo json_encode(["message" =>"Deleted Succefully"]);
+            }
+        }
     }

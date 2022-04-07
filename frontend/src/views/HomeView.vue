@@ -4,40 +4,73 @@
         <h1 class="title center">Fill up the form</h1>
     <!-- <Navigation/> -->
         <div class="form-container">   
-            <form class="mb-3" method="post" >
+            <form class="mb-3" method="post" @submit.prevent="submit">
             <div class="inpt">
             <label>Nom</label>
-            <input type="text" name="nom" class="form-control" placeholder="Entrez votre nom" required>
+            <input type="text" name="nom" class="form-control" placeholder="Entrez votre nom" v-model="nom" required>
             </div>
             <div class="inpt">
             <label>Prenom</label>
-            <input type="text" name="prenom" class="form-control" placeholder="Entrez votre prenom" required>
+            <input type="text" name="prenom" class="form-control" placeholder="Entrez votre prenom" v-model="prenom" required>
             </div>
             <div class="inpt">
             <label>Profession</label>
-            <input type="text" name="Profession" class="form-control" placeholder="Entrez votre profession" required>
+            <input type="text" name="Profession" class="form-control" placeholder="Entrez votre profession" v-model="profession" required>
             </div>
             <div class="inpt">
             <label>Date de naissance</label>
-            <input type="date" name="date_de_naissance" class="form-control"  placeholder="Date de naissance" required>
+            <input type="date" name="date_de_naissance" class="form-control" max="2005-12-31" placeholder="Date de naissance" v-model="date" required>
             </div>
             <div class="center">
-            <input type="submit" name="submit" class="btn btn-primary my-btn center">
+            <input type="submit" name="submit" class="btn btn-primary my-btn center" >
             </div>
-            <p>Etes-vous deja un ... ? <span>Clicker ici</span></p>
+            <p>Etes-vous dèja enregistrer ? <router-link to="/user"><u> Clicker ici </u></router-link></p>
             </form>
+          <div class="alert alert-success" v-if="success" role="alert"  >
+            {{ref}}
+          </div>
+          <div class="alert alert-warning" role="alert" v-if="wrong">
+            A simple warning alert—check it out!
+          </div>
         </div>
     </div> 
 </template>
 
 <script>
-// import Navigation from "../components/Navigation.vue";
-/*  export default {
-    components: {
-//     Navigation
+import axios from "axios";
 
- }
-} */
+export default {
+    data(){
+      return{
+        nom: "",
+        prenom: "",
+        profession: "",
+        date: "",
+        ref: "",
+        success: false,
+        wrong: false
+      }
+    },
+    methods:{
+      submit(){
+        const endpoint = "http://localhost/RDV_architecte/app/user/addUser"
+        axios.post(endpoint ,{
+          nom : this.nom,
+          prenom : this.prenom,
+          profession : this.profession,
+          date : this.date
+        }).then(res => {
+          if (res.data === false){
+            this.wrong = true
+          }else {
+            this.success = true
+            this.ref = `Your reference is "${res.data.reference}" please copy it`
+            console.log(res.data)
+          }
+        })
+      }
+    }
+}
 </script>
 
 <style lang="scss">
@@ -79,7 +112,7 @@
     background-repeat:no-repeat;
     background-size:cover;
     object-fit: cover;
-    width: 100%;
+    max-width: 1440px;
     min-height: 100vh;
 }
 @media (max-width: 480px){

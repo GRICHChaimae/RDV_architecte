@@ -2,13 +2,13 @@
 require_once "DatabaseModel.php";
     class UserModel{
 
-        static public  function  addUser($data){
-            $db = DatabaseModel::connect()->prepare('INSERT INTO users (nom, prenom, profession , date_de_naissance, reference) values 
-                                        (:nom, :prenom, :profession, :ddn, :reference )');
 
-            if ($db->execute($data)){
-                echo 'valid';
-            }
+
+        static public  function  addUser($data){
+            $connect = DatabaseModel::connect();
+            $db = $connect->prepare('INSERT INTO users ( nom, prenom, profession , date_de_naissance, reference) values 
+                                        (:nom, :prenom, :profession, :ddn, :reference )');
+            return $db->execute($data) ? $connect->lastInsertId() : false;
         }
 //        static public  function  getUser(){
 //            $db = DatabaseModel::connect()->prepare('SELECT * FROM users where refe');
@@ -16,9 +16,7 @@ require_once "DatabaseModel.php";
 //        }
         static public function getUserByRef($ref){
             $db = DatabaseModel::connect()->prepare('SELECT * FROM users where reference = :ref ');
-//            check if query is executed
-//            if query is excuted return first user from statment if not rturn falsE
-            if ($db->execute(["ref"=>$ref])=== true){
+            if ($db->execute(["ref"=>$ref]) === true){
                 return $db->fetch(PDO::FETCH_ASSOC);
             }else{
                 return false;

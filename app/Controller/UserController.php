@@ -1,27 +1,28 @@
 <?php
 require_once dirname(__DIR__)."/Module/UserModel.php";
+header("Access-Control-Allow-Origin:*");
     class UserController{
-        public function getUser()
+        public function addUser()
         {
 
-            if (isset($_POST['submit'])){
+                $data =json_decode(file_get_contents("php://input"),true);
                 $reference = strtoupper(uniqid());
-                $data = array(
-                    'nom' => $_POST['nom'],
-                    'prenom' => $_POST['prenom'],
-                    'profession' => $_POST['profession'],
-                    'ddn' => $_POST['ddn'],
+                $datadata = array(
+                    'nom' => $data['nom'],
+                    'prenom' => $data['prenom'],
+                    'profession' => $data['profession'],
+                    'ddn' => $data['date'],
                     'reference' => $reference
                 );
-                $result = UserModel::addUser($data);
-                if($result !== 'ok'){
-                    echo json_encode(["message"=>"success", "reference"=>$reference]);
-                    return ;
+                $userId = UserModel::addUser($datadata);
+                if($userId){
+                    echo json_encode(["reference" => $reference, "id" => $userId]);
+                    return;
                 } else{
                     echo "Wrong ID";
                 }
         }
-        }
+
 
 //        public function userCheck()
 //        {
@@ -42,14 +43,17 @@ require_once dirname(__DIR__)."/Module/UserModel.php";
 
         public function checkByRef()
         {
-            if (isset($_POST['submit'])){
-                $value = strtoupper($_POST['reference']);
-                $result = UserModel::getUserByRef($value);
+                $data =json_decode(file_get_contents("php://input"));
+
+                $key = strtoupper($data->reference);
+                $result = UserModel::getUserByRef($key);
                 if ($result !== 'ok'){
                     echo json_encode($result);
-
+                }else{
+                    echo json_encode(array(
+                        'error' => 'no connection'
+                    ));
                 }
-            }
         }
         public function getAllUsers(){
             $result = UserModel::selectAllUsers();
