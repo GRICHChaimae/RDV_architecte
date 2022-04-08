@@ -26,7 +26,7 @@ require_once "DatabaseModel.php";
             nom = :nom , prenom = :prenom , date_de_naissance = :ddn , profession = :profession
             WHERE id = :id');
             if ($db->execute($newData)){
-                echo 'Successefull update';
+               return ' ok';
             }
         }
 

@@ -21,8 +21,9 @@ require_once dirname(__DIR__)."/Module/AdminModel.php";
         {
             $data = json_decode(file_get_contents("php://input"),true);
             $stmt = AdminModel::updateUser($data);
-            if ($stmt){
-                echo json_encode(["message" => "updated Success"]);
+
+            if ($stmt === 'ok'){
+                echo json_encode(["message" => "modifier avec succèe"]);
             }
 
         }

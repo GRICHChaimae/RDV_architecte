@@ -25,9 +25,7 @@
                     <div class="edit" >
 
                             <button style="background:none;border:none;" @click="getData(item)">
-<!--                                <router-link to="/editClient">-->
                                 <img src="../assets/edit.svg" alt="edit svg image">
-<!--                                </router-link>-->
                             </button>
                     </div>
                     <div class="delete">
@@ -69,12 +67,11 @@
 import axios from "axios";
 
 export default {
+  inject:["changeCurrentData", "currentData"],
   data(){
     return{
       clients: "",
       message: "",
-      item: "",
-      test: "hello"
     }
   },
    methods:{
@@ -87,8 +84,8 @@ export default {
       })
     },
     getData(data){
-      this.item = data
-      console.log(this.item)
+      this.changeCurrentData(data);
+      this.$router.push("/editClient")
     }
   },
   mounted() {

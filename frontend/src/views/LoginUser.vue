@@ -41,7 +41,7 @@
                 localStorage.setItem("user_id", this.ref);
                 localStorage.setItem("id",res.data.id)
                 console.log(localStorage);
-                this.$router.push('/rdv_update')
+                this.$router.push('/rendez-vous')
               }
               // if (!res.data.reference) {
               //   console.log("wrong connection");

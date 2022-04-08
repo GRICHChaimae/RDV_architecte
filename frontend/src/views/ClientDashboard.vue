@@ -1,7 +1,7 @@
 <template>
     <div class="home-content"> 
         <h1 class="title center">Edit OR Delete YourAppointment</h1>
-        <router-link to="rdv_update">
+        <router-link to="add-rdv">
           <button type="reset" class="btn btn-primary mybtn">
             Ajouter Rendez-vous
           </button>
@@ -21,22 +21,14 @@
                 <td scope="row">
                     <div class="d-flex" id="actions">
                     <span class="edit" >
-
-                            <button style="background:none;border:none;">
-                                <router-link to="/editUser">
+                            <button style="background:none;border:none;" @click="getdata(item)">
                                 <img src="../assets/edit.svg" alt="edit svg image">
-                                </router-link>
                             </button>
-
                     </span>
                     <span class="delete">
-
                             <button style="background:none;border:none;" @click="supprimer(item.id)">
-
                                 <img src="../assets/delete.svg" alt="edit svg image">
-
                             </button>
-
                     </span>
                     </div>
                 </td>
@@ -50,6 +42,7 @@ import axios from "axios";
 
 
 export default {
+  inject: ["currentRdv","changedRdv"],
     data(){
       return{
         rdv: "",
@@ -57,10 +50,8 @@ export default {
     },
     mounted() {
       const id = localStorage.getItem("id")
-      console.log(id);
       const  endpoint = `http://localhost/RDV_architecte/app/rdv/getAllRdv/${id}`
       axios.get(endpoint).then(res => {
-      console.log(res.data)
         this.rdv = res.data
       })
     },
@@ -72,6 +63,11 @@ export default {
           this.rdv = this.rdv.filter(e => e.id != rdv)
         }
       })
+    },
+    getdata(data){
+        this.changedRdv(data);
+        console.log(data);
+        this.$router.push('/edit-rdv')
     }
   }
 }

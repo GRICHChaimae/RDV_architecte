@@ -30,7 +30,7 @@
             {{ref}}
           </div>
           <div class="alert alert-warning" role="alert" v-if="wrong">
-            A simple warning alert—check it out!
+            une erreur est introduit!
           </div>
         </div>
     </div> 

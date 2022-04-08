@@ -5,16 +5,8 @@ class RdvController{
 
     public function addRdv(){
             $data = json_decode(file_get_contents("php://input"),true);
-            var_dump($data);
-            $datadata = [
-                'date' => $data['date'],
-                'creneau' => $data['creneau'],
-                'sujet' => $data['sujet'],
-                'user_id' => $data['user_id']
-            ];
-             var_dump($datadata);
-            $result = RdvModel::creatRdv($datadata);
-            return $result;
+            $result = RdvModel::creatRdv($data);
+            echo json_encode($result);
     }
 
     public function getAllRdv($id)
@@ -30,6 +22,22 @@ class RdvController{
         $result = RdvModel::deleteRdv($rdv);
         if ($result){
             echo "delete succesful";
+        }
+    }
+    public function update(){
+        $data = json_decode(file_get_contents("php://input"),true);
+        $result = RdvModel::updateRdv($data);
+        if ($result === 'ok'){
+            echo "updated succesful";
+        }
+    }
+    static function checkDate()
+    {
+        $data = json_decode(file_get_contents("php://input"),true);
+
+        $result = RdvModel::getDateCreneau($data["date"]);
+        if ($result){
+            echo json_encode($result);
         }
     }
 }

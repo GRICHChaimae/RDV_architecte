@@ -1,6 +1,6 @@
 <template>
 <div class="home-content">
-  <h1 class="title center">Modifier votre rendez-vous</h1>
+  <h1 class="title center">Ajouter un rendez-vous</h1>
     <div class="form">
        <router-link to="rendez-vous">
          <button type="text" class="btn btn-primary">Mes rendez-vous</button>
@@ -9,23 +9,24 @@
             <div class="form-body">
               <div class="col-md-6">
                 <label for="date" class="form-label">Date du rendez-vous</label>
-                <input type="date" placeholder="Date" :min="today" class="form-control" v-model="date" required />
+                <input type="date" placeholder="Date" :min="today" class="form-control" v-model.lazy="date" @change="checkAvailable" required />
               </div>
               <div class="col-md-4">
                 <label for="creneau" class="form-label">Créneau:</label>
                 <select name="creneau" class="form-select" v-model="creneau">
                     <option disabled value="0">Selecter le Créneau desirer:</option>
-                    <option value="1">10h-10h:30</option>
-                    <option value="2">11h-11h:30</option>
-                    <option value="3">14h-14h:30</option>
-                    <option value="4">15h-15h:30</option>
-                    <option value="5">16h-16h:30</option>
+                    <option v-for="option in options" :value="option">{{option}}</option>
+<!--                    <option value="1">10h-10h:30</option>-->
+<!--                    <option value="2">11h-11h:30</option>-->
+<!--                    <option value="3">14h-14h:30</option>-->
+<!--                    <option value="4">15h-15h:30</option>-->
+<!--                    <option value="5">16h-16h:30</option>-->
                 </select>
               </div>
             </div>
                 <p id="paragraphe">Sujet de rendez-vous</p>
                 <textarea  id="" cols="63" rows="10" v-model="sujet" placeholder="C'est quoi votre sujet ?" class="form-control"></textarea>
-                <input type="submit" name="submit" class="btn btn-primary my-btn" value="modifier">
+                <input type="submit" name="submit" class="btn btn-primary my-btn" value="Confirmer">
           <div class="alert alert-success" v-if="success" role="alert"  >
             Rendez-vous a été créer avec succèe le {{this.date}}.
           </div>
@@ -41,6 +42,13 @@
   export default {
     data(){
       return{
+        options: [
+          "10h-10h:30",
+          "11h-11h:30",
+          "14h-14h:30",
+          "15h-15h:30",
+          "16h-16h:30",
+        ],
         today: new Date(new Date().setDate(new Date().getDate() + 1)).toJSON().slice(0, 10),
         date : "",
         sujet : "",
@@ -59,12 +67,22 @@
           creneau : this.creneau,
           user_id : this.user_id
         }).then(res => {
-          if (!res.data){
-            console.log("error")
-          }else {
+          if (res.data){
             this.success = true;
+          }else {
+            console.log("error")
           }
         })
+      },
+      checkAvailable(){
+        const endpoint = `http://localhost/RDV_architecte/app/rdv/checkDate`;
+        console.log(this.date)
+        axios.post(endpoint,{
+         date: this.date
+        }).then(res => {
+          console.log(res.data)
+        })
+
       }
     }
   }

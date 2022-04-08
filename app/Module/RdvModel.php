@@ -23,10 +23,12 @@
             $isExecuted = $db->execute();
             return $isExecuted && $db->fetchAll(PDO::FETCH_ASSOC);
         }
-        static public function updateRdv(){
+        static public function updateRdv($data){
             $con = DatabaseModel::connect();
-            $db = $con->prepare('UPDATE rdv SET date = :date , creneau = :creneau , sujet = :sujet');
-            return $db->execute();
+            $db = $con->prepare('UPDATE rdv SET date = :date , creneau = :creneau , sujet = :sujet where id = :id');
+            if ($db->execute($data)){
+                return "ok";
+            }
         }
 
         public static function deleteRdv($id)
@@ -35,5 +37,14 @@
             if ($db->execute([$id])){
                 echo json_encode(["message" =>"Deleted Succefully"]);
             }
+        }
+
+        public static function getDateCreneau($date)
+        {
+            $db = DatabaseModel::connect()->prepare('SELECT creneau FROM rdv WHERE date = ?');
+            if ($db->execute([$date])) {
+                return $db->fetchAll(PDO::FETCH_ASSOC);
+            }
+
         }
 }
