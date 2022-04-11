@@ -7,7 +7,7 @@
         <div class="form-body">
           <div class="col-md-6">
             <label for="date" class="form-label">Date du rendez-vous</label>
-            <input type="date" placeholder="Date" :min="today" class="form-control" v-model="data.date" required />
+            <input type="date" placeholder="Date" :min="today" class="form-control" v-model="data.date" @change="checkAvailable" required />
           </div>
           <div class="col-md-4">
             <label for="creneau" class="form-label">Créneau:</label>
@@ -50,6 +50,7 @@ export default {
         "15h-15h:30",
         "16h-16h:30",
       ],
+      dateTime: [],
       data: this.currentRdv,
     }
   },
@@ -64,6 +65,17 @@ export default {
     }).then(res => {
         this.$router.push('/rendez-vous')
     })
+    },
+    checkAvailable(){
+      const endpoint = `http://localhost/RDV_architecte/app/rdv/checkDate`;
+      axios.post(endpoint,{
+        date: this.date
+      }).then(res => {
+        if (res.data != "errore"){
+          this.dateTime = res.data.map(res => res.creneau);
+          this.options = this.options.filter((i) => !this.dateTime.includes(i))
+        }
+      })
     }
   }
 }

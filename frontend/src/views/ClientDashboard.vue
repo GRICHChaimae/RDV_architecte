@@ -66,7 +66,6 @@ export default {
     },
     getdata(data){
         this.changedRdv(data);
-        console.log(data);
         this.$router.push('/edit-rdv')
     }
   }

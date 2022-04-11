@@ -29,7 +29,7 @@
                             </button>
                     </div>
                     <div class="delete">
-                            <button style="background:none;border:none;" @click="supprimer(item.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button style="background:none;border:none;" @click="supprimer(item.id)">
                                 <img src="../assets/delete.svg" alt="edit svg image">
                             </button>
                     </div>

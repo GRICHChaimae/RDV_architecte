@@ -15,7 +15,7 @@
                 <label for="creneau" class="form-label">Créneau:</label>
                 <select name="creneau" class="form-select" v-model="creneau">
                     <option disabled value="0">Selecter le Créneau desirer:</option>
-                    <option v-for="option in options" :value="option">{{option}}</option>
+                    <option v-for="option in options" v-bind:value="option">{{option}}</option>
 <!--                    <option value="1">10h-10h:30</option>-->
 <!--                    <option value="2">11h-11h:30</option>-->
 <!--                    <option value="3">14h-14h:30</option>-->
@@ -49,6 +49,7 @@
           "15h-15h:30",
           "16h-16h:30",
         ],
+        dateTime: [],
         today: new Date(new Date().setDate(new Date().getDate() + 1)).toJSON().slice(0, 10),
         date : "",
         sujet : "",
@@ -76,13 +77,14 @@
       },
       checkAvailable(){
         const endpoint = `http://localhost/RDV_architecte/app/rdv/checkDate`;
-        console.log(this.date)
         axios.post(endpoint,{
          date: this.date
         }).then(res => {
-          console.log(res.data)
+          if (res.data != "errore"){
+          this.dateTime = res.data.map(res => res.creneau);
+          this.options = this.options.filter((i) => !this.dateTime.includes(i))
+          }
         })
-
       }
     }
   }

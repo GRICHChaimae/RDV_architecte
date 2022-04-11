@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501f8db3-7414-45b5-b5c0-fe954ed5985a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/views/EditRdv.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/RdvController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/RdvController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Module/AdminModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Module/AdminModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Module/RdvModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Module/RdvModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/AddRdv.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/AddRdv.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/ClientDashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/ClientDashboard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Dashboard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/EditClient.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/EditClient.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/HomeView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/LoginUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/LoginUser.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/UpdateClient.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/AddRdv.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/client.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/EditRdv.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/EditRdv.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +70,7 @@
       <workItem from="1648478642381" duration="9345000" />
       <workItem from="1648562466639" duration="6408000" />
       <workItem from="1648631322672" duration="16467000" />
-      <workItem from="1649072670913" duration="85895000" />
+      <workItem from="1649072670913" duration="92321000" />
     </task>
     <servers />
   </component>
