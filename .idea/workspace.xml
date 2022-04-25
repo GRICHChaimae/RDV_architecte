@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="501f8db3-7414-45b5-b5c0-fe954ed5985a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/AddRdv.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/AddRdv.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/ClientDashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/ClientDashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/EditClient.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/EditClient.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/EditRdv.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/EditRdv.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rahbani_clinic" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -70,7 +66,13 @@
       <workItem from="1648478642381" duration="9345000" />
       <workItem from="1648562466639" duration="6408000" />
       <workItem from="1648631322672" duration="16467000" />
-      <workItem from="1649072670913" duration="92321000" />
+      <workItem from="1649072670913" duration="94775000" />
+      <workItem from="1649851185356" duration="1009000" />
+      <workItem from="1649864461226" duration="812000" />
+      <workItem from="1650282421906" duration="1461000" />
+      <workItem from="1650412632491" duration="1271000" />
+      <workItem from="1650460767978" duration="1915000" />
+      <workItem from="1650468232295" duration="227000" />
     </task>
     <servers />
   </component>

@@ -12,7 +12,7 @@
           <div class="col-md-4">
             <label for="creneau" class="form-label">Créneau:</label>
             <select name="creneau" class="form-select" v-model="data.creneau">
-              <option v-for="option in options" :value="option">{{option}}</option>
+              <option v-for="option in options" v-bind:value="option">{{data.creneau}}</option>
 <!--              <option value="1">10h-10h:30</option>-->
 <!--              <option value="2">11h-11h:30</option>-->
 <!--              <option value="3">14h-14h:30</option>-->
@@ -69,7 +69,7 @@ export default {
     checkAvailable(){
       const endpoint = `http://localhost/RDV_architecte/app/rdv/checkDate`;
       axios.post(endpoint,{
-        date: this.date
+        date: this.data.date
       }).then(res => {
         if (res.data != "errore"){
           this.dateTime = res.data.map(res => res.creneau);
