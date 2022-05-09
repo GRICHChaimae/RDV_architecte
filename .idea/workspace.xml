@@ -45,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cinemaster" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -73,6 +73,8 @@
       <workItem from="1650412632491" duration="1271000" />
       <workItem from="1650460767978" duration="1915000" />
       <workItem from="1650468232295" duration="227000" />
+      <workItem from="1650900849954" duration="3839000" />
+      <workItem from="1652085008734" duration="2461000" />
     </task>
     <servers />
   </component>

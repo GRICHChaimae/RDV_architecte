@@ -12,7 +12,7 @@
           <div class="col-md-4">
             <label for="creneau" class="form-label">Créneau:</label>
             <select name="creneau" class="form-select" v-model="data.creneau">
-              <option v-for="option in options" v-bind:value="option">{{data.creneau}}</option>
+              <option v-for="option in options" v-bind:value="option">{{option}}</option>
 <!--              <option value="1">10h-10h:30</option>-->
 <!--              <option value="2">11h-11h:30</option>-->
 <!--              <option value="3">14h-14h:30</option>-->
@@ -51,6 +51,7 @@ export default {
         "16h-16h:30",
       ],
       dateTime: [],
+      today: new Date(new Date().setDate(new Date().getDate() + 1)).toJSON().slice(0, 10),
       data: this.currentRdv,
     }
   },
