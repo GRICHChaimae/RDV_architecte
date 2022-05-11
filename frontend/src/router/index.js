@@ -7,9 +7,11 @@ import Dashboard from "../views/Dashboard.vue";
 import ClientDashboard from "../views/ClientDashboard.vue";
 import EditClient from "../views/EditClient.vue";
 import EditRdv from "../views/EditRdv.vue";
+import Acceuil from "../views/Acceuil.vue";
 
 const routes = [
-  { path: "/", component: Home },
+  { path: "/", component: Acceuil },
+  { path: "/register", component: Home },
   { path: "/user", component: LoginUser },
   { path: "/admin", component: LoginAdmin },
   { path: "/dashboard", component: Dashboard },

@@ -68,4 +68,13 @@ export default {
     text-align: center;
     color: rgb(46, 44, 44);
 }
+.title{
+  margin-top: 2rem;
+  letter-spacing: 1rem;
+  text-decoration: wavy;
+  font-weight: 600 ;
+  text-transform: uppercase;
+  text-align: center;
+  color: antiquewhite;
+}
 </style>

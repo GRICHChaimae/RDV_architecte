@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501f8db3-7414-45b5-b5c0-fe954ed5985a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/views/Acceuil.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/EditRdv.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/EditRdv.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/HomeView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/LoginAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/LoginAdmin.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cinemaster" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laravel_project/Annonces-app/frontend" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -74,7 +79,8 @@
       <workItem from="1650460767978" duration="1915000" />
       <workItem from="1650468232295" duration="227000" />
       <workItem from="1650900849954" duration="3839000" />
-      <workItem from="1652085008734" duration="2461000" />
+      <workItem from="1652085008734" duration="3668000" />
+      <workItem from="1652111703078" duration="19548000" />
     </task>
     <servers />
   </component>

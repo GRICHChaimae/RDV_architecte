@@ -7,7 +7,7 @@
         </div> 
       <ul class="nav nav-pills">
         <li class="nav-item"><router-link to="/"><span class="nav-link" aria-current="page">Home</span></router-link></li>
-        <li class="nav-item"><router-link to="/"><span class="nav-link">Register</span></router-link></li>
+        <li class="nav-item"><router-link to="/register"><span class="nav-link">Register</span></router-link></li>
         <li class="nav-item">
            <div class="dropdown">
                 <span class="btn btn-primary dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">

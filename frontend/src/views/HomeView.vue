@@ -88,12 +88,10 @@ export default {
     margin-top: 2rem;
     letter-spacing: 1rem;
     text-decoration: wavy;
-    font-weight: 600 bolder;
-    font-style: italic;
+    font-weight: 600 ;
     text-transform: uppercase;
-    background: rgba(255, 255, 255, 0.107);
     text-align: center;
-
+    color: antiquewhite;
 }
 .form-container{
     background-color: whitesmoke;
@@ -108,7 +106,7 @@ export default {
     margin: 10px;
 }
 .home-content{
-    background-image: url("../assets/architecture-3357028__340.png");
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.50), rgba(51, 51, 173, 0.35)), url("../assets/architecture-3357028__340.png");
     background-repeat:no-repeat;
     background-size:cover;
     object-fit: cover;
