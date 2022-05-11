@@ -13,12 +13,11 @@
                 <span class="btn btn-primary dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                 Login
                 </span>
-               
 
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <router-link to="/user" ><li><span class="dropdown-item">User</span></li> </router-link>
-                    <router-link to="/admin"><li><span class="dropdown-item">Admin</span></li></router-link>
-                </ul>
+             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+               <router-link to="/user" ><li><span class="dropdown-item">User</span></li> </router-link>
+               <router-link to="/admin"><li><span class="dropdown-item">Admin</span></li></router-link>
+             </ul>
             </div>
         </li>
       </ul>
@@ -26,11 +25,8 @@
   </div>
     </div>
 </template>
-<script>
-export default {
-    name:"Header",
-    
-}
+<script setup>
+
 </script>
 <style lang="scss" scoped>
     li{

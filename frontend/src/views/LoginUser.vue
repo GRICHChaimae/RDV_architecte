@@ -1,6 +1,6 @@
 <template>
     <div class="body center">
-        <h2 class="title">Login With Your User ID</h2>
+      <h2 class="title">Login With Your User ID</h2>
         <div class="form-container">
          <form action="" method="post" @submit.prevent="submit">
                 <h4 class="txt-center">User Login</h4>
@@ -76,7 +76,7 @@
     object-fit: cover;
     background-position: center;
     width: 100%;
-    height: 70vh;
+    height: 100vh;
 }
 .txt-center{
     text-align: center;

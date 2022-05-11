@@ -3,7 +3,7 @@
     <div class="home-content center">
         <h1 class="title center">Fill up the form</h1>
     <!-- <Navigation/> -->
-        <div class="form-container">   
+        <div class="form-container mb-5">
             <form class="mb-3" method="post" @submit.prevent="submit">
             <div class="inpt">
             <label>Nom</label>
