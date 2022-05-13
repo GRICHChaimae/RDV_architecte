@@ -36,7 +36,7 @@
             const endpoint = "http://localhost/RDV_architecte/app/user/checkByRef"
             axios.post(endpoint, {reference: this.ref}).then(res => {
               if (res.data === false){
-                console.log('error')
+                alert("Votre ID est n'est pas valide")
               }else {
                 localStorage.setItem("user_id", this.ref);
                 localStorage.setItem("id",res.data.id)
@@ -70,7 +70,7 @@
         @include center(center,center,column);
 }   
 .body{
-    background-image:url("../assets/city-182223__480.png");
+    background-image:linear-gradient(to top, rgba(255, 255, 255, 0.27), rgba(196, 196, 100, 0.3)),url("../assets/city-182223__480.png");
     background-repeat:no-repeat;
     background-size:cover;
     object-fit: cover;

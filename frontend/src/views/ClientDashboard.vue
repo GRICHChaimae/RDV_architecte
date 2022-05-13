@@ -82,7 +82,7 @@ export default {
     margin-bottom:20px ;
   }
   .home-content{
-    background-image: url("../assets/architecture-3357028__340.png");
+    background-image: url("../assets/house-1477041__340.png");
     background-repeat:no-repeat;
     background-size:cover;
     object-fit: cover;
@@ -102,7 +102,6 @@ export default {
     letter-spacing: 1rem;
     text-decoration: wavy;
     font-weight: 600;
-    font-style: italic;
     text-transform: uppercase;
     background: rgba(255, 255, 255, 0.107);
     text-align: center;

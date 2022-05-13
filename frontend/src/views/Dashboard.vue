@@ -113,7 +113,7 @@ export default {
   align-items: $align;
 }
     .container{
-      background-image: url("../assets/city-182223__480.png");
+      background-image: url("../assets/house-1477041__340.png");
       background-repeat:no-repeat;
       background-size:cover;
       object-fit: cover;

@@ -58,7 +58,6 @@ export default {
           this.$router.push('/dashboard')
       })
     }
-
   }
 }
 </script>
